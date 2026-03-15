@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Miniblox Custom Name",
+  "version": "5.1.0",
+  "description": "Custom visual name tools for Miniblox",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "*://miniblox.io/*",
+    "*://*.miniblox.io/*",
+    "*://miniblox.org/*",
+    "*://*.miniblox.org/*",
+    "*://miniblox.com/*",
+    "*://*.miniblox.com/*",
+    "*://miniblox.online/*",
+    "*://*.miniblox.online/*",
+    "*://crazygames.com/*",
+    "*://*.crazygames.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://miniblox.io/*",
+        "*://*.miniblox.io/*",
+        "*://miniblox.org/*",
+        "*://*.miniblox.org/*",
+        "*://miniblox.com/*",
+        "*://*.miniblox.com/*",
+        "*://miniblox.online/*",
+        "*://*.miniblox.online/*",
+        "*://crazygames.com/*",
+        "*://*.crazygames.com/*"
+      ],
+      "all_frames": true,
+      "run_at": "document_start",
+      "js": ["content.js", "animations.js"]
+    }
+  ]
+}
